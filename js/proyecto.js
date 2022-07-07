@@ -27,6 +27,12 @@ function cargarEventListeners() {
 // Función que añade el curso al carrito
 function agregarCurso(e) {
      e.preventDefault();
+     Swal.fire({
+          title: 'Success!',
+          text: 'Se agrego al carrito exitosamente',
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        })
      // Delegation para agregar-carrito
      if(e.target.classList.contains('agregar-carrito')) {
           const curso = e.target.parentElement.parentElement;
@@ -71,6 +77,12 @@ function leerDatosCurso(curso) {
 // Elimina el curso del carrito en el DOM
 function eliminarCurso(e) {
      e.preventDefault();
+     Swal.fire({
+          title: 'Success!',
+          text: 'Se elimino del carrito exitosamente',
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        })
      if(e.target.classList.contains('borrar-curso') ) {
           // e.target.parentElement.parentElement.remove();
           const cursoId = e.target.getAttribute('data-id')
