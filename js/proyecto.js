@@ -129,3 +129,32 @@ function vaciarCarrito() {
           contenedorCarrito.removeChild(contenedorCarrito.firstChild);
       }
 }
+
+
+const pedirPosts = async () => {
+
+     const resp = await fetch('https://jsonplaceholder.typicode.com/albums/1/photos')
+     const data = await resp.json()
+
+     console.log(data)
+ 
+     data.forEach((post) => {
+ 
+         // const {title, body} = post
+ 
+         listado.innerHTML += `
+         <div  class="four columns" >
+         <div class="card">
+                <img src="${post.url}" class="imagen-curso u-full-width">
+               <div class="info-card">
+                 <h4>${post.title}</h4>
+                </div>
+          </div>
+          </div>
+          
+         `
+     })
+ 
+ }
+     
+ pedirPosts()
